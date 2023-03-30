@@ -30,6 +30,16 @@ for i in range(4):
 
 # use the module imported above to shuffle the numbers appended to the Deck List
 random.shuffle(Deck)
+
+# define the function that would automatically check the counter if it crossed
+# 21 or is on 21
+def check_counter():
+    if (counter > 21):
+        print("You've went past 21")
+        sys.exit()
+    if (counter == 21):
+        print("You got 21!")
+        sys.exit()
     
 # get the user input on whatever to play or exit
 user_input = input("Would you like to play or exit? ")
@@ -43,9 +53,4 @@ if user_input == "play":
             drawn_card = random.choice(Deck)
             counter = counter + drawn_card
             print(counter)
-            if (counter > 21):
-                print("You've went past 21")
-                sys.exit()
-            if (counter == 21):
-                print("You got 21!")
-                sys.exit()
+            check_counter()
