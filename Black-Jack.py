@@ -38,11 +38,23 @@ def check_counter():
         print("You've went past 21")
         sys.exit()
     if (counter == 21):
-        print("You got 21!")
-        sys.exit()
+        congratulate("player")
+            
+# define a function that prints out a congratulation if the player gets a 21
+def congratulate(player):
+    print("Congratulations! You've reached 21!")
+    print("""
+\ \ / /  _  | | | | | |  | ||  _  | \ | |
+ \ V /| | | | | | | | |  | || | | |  \| |
+  \ / | | | | | | | | |/\| || | | | . ` |
+  | | \ \_/ / |_| | \  /\  /\ \_/ / |\  |
+  \_/  \___/ \___/   \/  \/  \___/\_| \_/
+    """)
+    sys.exit()
     
 # get the user input on whatever to play or exit
 user_input = input("Would you like to play or exit? ")
+# if user wants to play, check if the counter is below 21, if under 21, let them play
 if user_input == "play":
     while counter <= 21:
         draw_or_not = input("Would you like to draw a card? Yes or No? ")
