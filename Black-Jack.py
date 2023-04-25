@@ -52,6 +52,18 @@ def congratulate(player):
     """)
     sys.exit()
     
+ def condole(player):
+    print("You've went past 21!"
+    print("""
+    __   _______ _   _   _     _____ _____ _____ 
+\ \ / /  _  | | | | | |   |  _  /  ___|_   _|
+ \ V /| | | | | | | | |   | | | \ `--.  | |  
+  \ / | | | | | | | | |   | | | |`--. \ | |  
+  | | \ \_/ / |_| | | |___\ \_/ /\__/ / | |  
+  \_/  \___/ \___/  \_____/\___/\____/  \_/  
+                                             
+              """)
+    
 # get the user input on whatever to play or exit
 user_input = input("Would you like to play or exit? ")
 # if user wants to play, check if the counter is below 21, if under 21, let them play
