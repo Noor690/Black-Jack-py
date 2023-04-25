@@ -35,13 +35,13 @@ random.shuffle(Deck)
 # 21 or is on 21
 def check_counter():
     if (counter > 21):
-        condole("player")
+        artwork("condole")
         sys.exit()
     if (counter == 21):
-        congratulate("player")
+        artwork("congratulate")
             
 # define a function that prints out a congratulation if the player gets a 21
-def congratulate(player):
+def artwork(congratulate):
     print("Congratulations! You've reached 21!")
     print("""
 __   _______ _   _   _    _  _______   _  
@@ -53,7 +53,7 @@ __   _______ _   _   _    _  _______   _
     """)
     sys.exit()
     
-def condole(player):
+def artwork(condole):
     print("You've went past 21!")
     print("""
 __   _______ _   _   _     _____ _____ _____ 
