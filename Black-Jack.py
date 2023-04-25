@@ -35,7 +35,7 @@ random.shuffle(Deck)
 # 21 or is on 21
 def check_counter():
     if (counter > 21):
-        print("You've went past 21")
+        condole("player")
         sys.exit()
     if (counter == 21):
         congratulate("player")
@@ -44,6 +44,7 @@ def check_counter():
 def congratulate(player):
     print("Congratulations! You've reached 21!")
     print("""
+__   _______ _   _   _    _  _______   _  
 \ \ / /  _  | | | | | |  | ||  _  | \ | |
  \ V /| | | | | | | | |  | || | | |  \| |
   \ / | | | | | | | | |/\| || | | | . ` |
@@ -52,17 +53,16 @@ def congratulate(player):
     """)
     sys.exit()
     
- def condole(player):
-    print("You've went past 21!"
+def condole(player):
+    print("You've went past 21!")
     print("""
-    __   _______ _   _   _     _____ _____ _____ 
+__   _______ _   _   _     _____ _____ _____ 
 \ \ / /  _  | | | | | |   |  _  /  ___|_   _|
  \ V /| | | | | | | | |   | | | \ `--.  | |  
   \ / | | | | | | | | |   | | | |`--. \ | |  
   | | \ \_/ / |_| | | |___\ \_/ /\__/ / | |  
   \_/  \___/ \___/  \_____/\___/\____/  \_/  
-                                             
-              """)
+    """)
     
 # get the user input on whatever to play or exit
 user_input = input("Would you like to play or exit? ")
