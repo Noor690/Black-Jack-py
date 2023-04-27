@@ -1,4 +1,3 @@
-# import a python module that will be used to randomize numbers in Deck List
 import random
 import sys
 import subprocess
@@ -9,9 +8,11 @@ module_name = "colorama"
 # Check if the module is already installed
 try:
     __import__(module_name)
-   except ImportError:
+except ImportError:
     # If the module is not installed, use pip3 to install it
     subprocess.check_call([sys.executable, "-m", "pip", "install", module_name])
+    
+from colorama import Fore
 
 # First we initiate a null list called "Deck"
 Deck = []
@@ -46,15 +47,16 @@ random.shuffle(Deck)
 # 21 or is on 21
 def check_counter():
     if (counter > 21):
-        artwork("condole")
+        condole("player")
         sys.exit()
     if (counter == 21):
-        artwork("congratulate")
+        congratulate("player")
+        sys.exit()
             
 # define a function that prints out a congratulation if the player gets a 21
-def artwork(congratulate):
-    print("Congratulations! You've reached 21!")
-    print("""
+def congratulate(player):
+    print(Fore.GREEN + "Congratulations! You've reached 21!")
+    print(Fore.GREEN + """
 __   _______ _   _   _    _  _______   _  
 \ \ / /  _  | | | | | |  | ||  _  | \ | |
  \ V /| | | | | | | | |  | || | | |  \| |
@@ -62,11 +64,10 @@ __   _______ _   _   _    _  _______   _
   | | \ \_/ / |_| | \  /\  /\ \_/ / |\  |
   \_/  \___/ \___/   \/  \/  \___/\_| \_/
     """)
-    sys.exit()
     
-def artwork(condole):
-    print("You've went past 21!")
-    print("""
+def condole(player):
+    print(Fore.RED + "You've went past 21!")
+    print(Fore.RED + """
 __   _______ _   _   _     _____ _____ _____ 
 \ \ / /  _  | | | | | |   |  _  /  ___|_   _|
  \ V /| | | | | | | | |   | | | \ `--.  | |  
