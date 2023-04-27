@@ -1,6 +1,17 @@
 # import a python module that will be used to randomize numbers in Deck List
 import random
 import sys
+import subprocess
+
+# Define the name of the module to install
+module_name = "colorama"
+
+# Check if the module is already installed
+try:
+    __import__(module_name)
+   except ImportError:
+    # If the module is not installed, use pip3 to install it
+    subprocess.check_call([sys.executable, "-m", "pip", "install", module_name])
 
 # First we initiate a null list called "Deck"
 Deck = []
